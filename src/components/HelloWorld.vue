@@ -11,15 +11,17 @@
             <el-form-item label="波动率：">
                 <el-tag style="width:100%">{{percent}}</el-tag>
             </el-form-item>
-            <el-button type="primary" style="width:100%;margin-bottom:20px" @click="getResult">开始计算</el-button>
+            <el-form-item label="">
+                <el-button type="primary" style="width:100%;margin-bottom:20px" @click="getResult">开始计算</el-button>
+            </el-form-item>
             <el-form-item label="反向波动率：">
-                <el-tag style="width:100%" type="success">{{reversePer}}</el-tag>
+                <el-tag style="width:100%">{{reversePer}}</el-tag>
             </el-form-item>
             <el-form-item label="平仓价格：">
-                <el-tag style="width:100%" type="danger">{{resPrice}}</el-tag>
+                <el-tag style="width:100%" type="success">{{resPrice}}</el-tag>
             </el-form-item>
             <el-form-item label="杠杆倍数：">
-                <el-tag style="width:100%" type="danger">{{resLeverage}}</el-tag>
+                <el-tag style="width:100%" type="success">{{resLeverage}}</el-tag>
             </el-form-item>
         </el-form>
     </div>
@@ -46,7 +48,7 @@ export default {
     methods: {
         getResult () {
             // 反向做空策略
-            if (this.startNum < this.endNum) {
+            if (parseFloat(this.startNum) < parseFloat(this.endNum)) {
                 // 差值
                 let num1 = this.endNum - this.startNum
                 // 波动率
@@ -61,9 +63,10 @@ export default {
                 this.reversePer = num3
                 this.resPrice = num4
                 this.resLeverage = Math.ceil(num5)
+                return
             }
             // 反向做多策略
-            if (this.startNum > this.endNum) {
+            if (parseFloat(this.startNum) > parseFloat(this.endNum)) {
                 // 差值
                 let num1 = this.startNum - this.endNum
                 // 波动率
@@ -78,6 +81,7 @@ export default {
                 this.reversePer = num3
                 this.resPrice = num4
                 this.resLeverage = Math.ceil(num5)
+                return
             }
         }
     }
