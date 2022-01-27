@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <HelloWorld msg="极限收束理论" />
+        <HelloWorld msg="极限收束" />
     </div>
 </template>
 
