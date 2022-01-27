@@ -56,7 +56,20 @@ export default {
                 // 反向波动率
                 let num3 = '-' + (num1 * this.eatNum / this.endNum * 100).toFixed(2) + "%"
                 // 指导价格
-                let num4 = (parseFloat(this.endNum) - parseFloat(num1 * this.eatNum)).toFixed(4)
+                let len = 0
+                if (this.startNum < 10000) {
+                    len = 1
+                }
+                if (this.startNum < 1000) {
+                    len = 2
+                }
+                if (this.startNum < 100) {
+                    len = 3
+                }
+                if (this.startNum < 10) {
+                    len = 4
+                }
+                let num4 = (parseFloat(this.endNum) - parseFloat(num1 * this.eatNum)).toFixed(len)
                 // 追求翻倍收益的杠杆倍数
                 let num5 = 1 / (num1 * this.eatNum / this.endNum)
                 this.percent = num2
@@ -74,7 +87,20 @@ export default {
                 // 反向波动率
                 let num3 = '+' + (num1 * this.eatNum / this.endNum * 100).toFixed(2) + "%"
                 // 指导价格
-                let num4 = (parseFloat(this.endNum) + parseFloat(num1 * this.eatNum)).toFixed(4)
+                let len = 0
+                if (this.startNum < 10000) {
+                    len = 1
+                }
+                if (this.startNum < 1000) {
+                    len = 2
+                }
+                if (this.startNum < 100) {
+                    len = 3
+                }
+                if (this.startNum < 10) {
+                    len = 4
+                }
+                let num4 = (parseFloat(this.endNum) + parseFloat(num1 * this.eatNum)).toFixed(len)
                 // 追求翻倍收益的杠杆倍数
                 let num5 = 1 / (num1 * this.eatNum / this.endNum)
                 this.percent = num2
