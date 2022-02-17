@@ -26,6 +26,9 @@
                 </el-form-item>
             </el-form>
         </div>
+        <p>1、相信自己。</p>
+        <p>2、对手的死亡是最大的保险。</p>
+        <p>3、提前是预判，后手是判断。</p>
         <!-- <div class="fl">
             <el-form ref="dataForm" label-width="100px">
                 <el-form-item>
