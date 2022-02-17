@@ -1,10 +1,8 @@
 <template>
     <div class="container">
+        <h2>{{msg}}</h2>
         <div class="fl">
             <el-form ref="dataForm" label-width="100px">
-                <el-form-item>
-                    <h2>{{msg}}</h2>
-                </el-form-item>
                 <el-form-item label="起始价格：" prop="startNum">
                     <el-input v-model="startNum"></el-input>
                 </el-form-item>
@@ -28,12 +26,12 @@
                 </el-form-item>
             </el-form>
         </div>
-        <div class="fl">
+        <!-- <div class="fl">
             <el-form ref="dataForm" label-width="100px">
                 <el-form-item>
                     <h2>止盈止损</h2>
                 </el-form-item>
-                <el-form-item label="介入价格：" prop="endNum">
+                <el-form-item label="3连介入：" prop="endNum">
                     <el-input v-model="newNum"></el-input>
                 </el-form-item>
                 <el-form-item label="止盈点：">
@@ -54,14 +52,8 @@
                 <el-form-item label="盈亏比：">
                     <el-tag style="width:100%" type="success">{{profitLoss}}</el-tag>
                 </el-form-item>
-                <el-form-item label="50U持仓：">
-                    <el-tag style="width:100%" type="success">{{u50}}</el-tag>
-                </el-form-item>
-                <el-form-item label="100U持仓：">
-                    <el-tag style="width:100%" type="success">{{u100}}</el-tag>
-                </el-form-item>
             </el-form>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -249,15 +241,9 @@ export default {
 
 <style scoped>
 .container {
-    /* border: 1px solid red; */
-    width: 80%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 .fl {
     flex: 1;
-    padding: 0 20px;
 }
 </style>
