@@ -27,36 +27,7 @@
             </el-form>
         </div>
         <p>1、相信自己。</p>
-        <p>2、对手的死亡是最大的保险。</p>
-        <p>3、提前是预判，后手是判断。</p>
-        <!-- <div class="fl">
-            <el-form ref="dataForm" label-width="100px">
-                <el-form-item>
-                    <h2>止盈止损</h2>
-                </el-form-item>
-                <el-form-item label="3连介入：" prop="endNum">
-                    <el-input v-model="newNum"></el-input>
-                </el-form-item>
-                <el-form-item label="止盈点：">
-                    <el-tag style="width:100%">{{stopProfitPrice}}</el-tag>
-                </el-form-item>
-                <el-form-item label="止损点：">
-                    <el-tag style="width:100%">{{stopLoss}}</el-tag>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" style="width:100%;margin-bottom:20px" @click="getResult2">开始计算</el-button>
-                </el-form-item>
-                <el-form-item label="预计盈利：">
-                    <el-tag style="width:100%" type="success">{{profitPer}}</el-tag>
-                </el-form-item>
-                <el-form-item label="预计亏损：">
-                    <el-tag style="width:100%" type="success">{{lossPer}}</el-tag>
-                </el-form-item>
-                <el-form-item label="盈亏比：">
-                    <el-tag style="width:100%" type="success">{{profitLoss}}</el-tag>
-                </el-form-item>
-            </el-form>
-        </div> -->
+        <p>2、保持耐心。</p>
     </div>
 </template>
 
