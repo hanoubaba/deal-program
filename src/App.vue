@@ -1,11 +1,12 @@
 <template>
     <div id="app">
-        <HelloWorld msg="极限收束模型" />
+        <HelloWorld msg="" />
     </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/bdemo.vue'
 
 export default {
     name: 'App',
