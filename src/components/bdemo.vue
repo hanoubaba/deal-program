@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h4>15分钟周期1分钟跟随测试</h4>
+        <h4>15分钟周期1分钟2分钟跟随测试</h4>
         <div class="fl">
             <el-form ref="dataForm" label-width="100px">
                 <el-form-item label="现价：" prop="num">
