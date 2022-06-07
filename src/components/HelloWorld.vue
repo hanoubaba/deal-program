@@ -26,8 +26,6 @@
                 </el-form-item>
             </el-form>
         </div>
-        <p>1、相信自己。</p>
-        <p>2、保持耐心。</p>
     </div>
 </template>
 
