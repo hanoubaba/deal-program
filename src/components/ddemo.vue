@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2>{{msg}}</h2>
+        <h2>half双保险策略</h2>
         <div class="fl">
             <el-form ref="dataForm" label-width="100px">
                 <el-form-item label="现价：" prop="startNum">
