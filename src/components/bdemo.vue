@@ -1,27 +1,12 @@
 <template>
-    <div class="container">
-        <h4>15分钟周期1分钟2分钟跟随测试</h4>
-        <div class="fl">
-            <el-form ref="dataForm" label-width="100px">
-                <el-form-item label="现价：" prop="num">
-                    <el-input v-model="num"></el-input>
-                </el-form-item>
-                <el-form-item label="">
-                    <el-button type="primary" style="width:100%;margin-bottom:20px" @click="getResult">开始计算</el-button>
-                </el-form-item>
-                <el-form-item label="1%">
-                    <el-tag style="width:100%" type="success">{{res1}}</el-tag>
-                </el-form-item>
-                <el-form-item label="2%">
-                    <el-tag style="width:100%" type="success">{{res2}}</el-tag>
-                </el-form-item>
-                <el-form-item label="-1%">
-                    <el-tag style="width:100%" type="">{{res3}}</el-tag>
-                </el-form-item>
-                <el-form-item label="-2%">
-                    <el-tag style="width:100%" type="">{{res4}}</el-tag>
-                </el-form-item>
-            </el-form>
+    <div class="all">
+        <div class="container">
+            <div class="box1">
+                <p class="date">{{date}}</p>
+            </div>
+            <div class="box2">
+                <h1 class="time">{{time}}</h1>
+            </div>
         </div>
     </div>
 </template>
@@ -31,34 +16,112 @@ export default {
     name: 'HelloWorld',
     data () {
         return {
-            num: '',
-            res1: '',
-            res2: '',
-            res3: '',
-            res4: '',
+            date: '',
+            time: ''
         }
     },
+    mounted () {
+        this.run()
+    },
     methods: {
-        getResult () {
-            this.res1 = this.num * 1.01
-            this.res2 = this.num * 1.02
-            this.res3 = this.num * 0.99
-            this.res4 = this.num * 0.98
+        run () {
+            var time = new Date();//获取系统当前时间
+            var year = time.getFullYear();
+            var month = time.getMonth() + 1;
+            var date = time.getDate();//系统时间月份中的日
+            // var day = time.getDay();//系统时间中的星期值
+            // var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            // var week = weeks[day];//显示为星期几
+            var hour = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            // console.log(seconds);
+            if (month < 10) {
+                month = "0" + month;
+            }
+            if (date < 10) {
+                date = "0" + date;
+            }
+            if (hour < 10) {
+                hour = "0" + hour;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            //var newDate = year+"年"+month+"月"+date+"日"+week+hour+":"+minutes+":"+seconds;
+            // document.getElementById("show").innerHTML = year + "年" + month + "月" + date + "日" + week + hour + ":" + minutes + ":" + seconds;
+            this.date = year + "年" + month + "月" + date + "日"
+            this.time = hour + ":" + minutes + ":" + seconds;
+            setTimeout(() => {
+                this.run()
+            }, 1000);
         },
     }
 }
 </script>
 
 <style scoped>
+.all {
+    margin: -8px;
+    padding: 0;
+}
 .container {
-    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
     margin: 0 auto;
+    max-width: 750px;
+    height: 800px;
+    /* border: 1px solid red; */
+    background: url('../assets/hs.png') no-repeat center/100%;
 }
-.fl {
-    flex: 1;
+.box1 {
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    top: 224px;
+    width: 100%;
+    /* height: 100px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-p {
-    color: #fc0048;
-    font-size: 14px;
+.date {
+    /* border: 1px solid blue; */
+    width: 80%;
+    /* height: 100px; */
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #999;
+    background-color: #fff;
+}
+.box2 {
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    top: 240px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time {
+    /* border: 1px solid blue; */
+    width: 80%;
+    height: 80px;
+    font-size: 48px;
+    color: #000;
+    font-weight: bolder;
+    background-color: #fff;
+    letter-spacing: 5px;
 }
 </style>
