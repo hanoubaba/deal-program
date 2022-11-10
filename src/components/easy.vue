@@ -37,8 +37,8 @@ export default {
             console.log('demo')
         },
         getResult () {
-            this.up1 = (this.num * 1.01).toFixed(2)
-            this.down1 = (this.num * 0.99).toFixed(2)
+            this.up1 = this.num * 1.01
+            this.down1 = this.num * 0.99
         },
     }
 }
