@@ -1,8 +1,10 @@
 <template>
     <div class="container">
         <img src="../assets/hs.png" alt="">
-        <div class="data">
-            <!-- <p class="date">{{date}}</p> -->
+        <div class="box1">
+            <p class="date">{{date}}</p>
+        </div>
+        <div class="box2">
             <h1 class="time">{{time}}</h1>
         </div>
     </div>
@@ -64,7 +66,19 @@ export default {
 .container {
     position: relative;
 }
-.data {
+.box1 {
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    top: 670px;
+    width: 1080px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box2 {
     /* border: 1px solid red; */
     position: absolute;
     left: 0;
@@ -78,14 +92,22 @@ export default {
 }
 .date {
     /* border: 1px solid blue; */
-    width: 760px;
+    width: 800px;
     height: 100px;
+    /* line-height: 100px; */
+    padding: 0;
+    margin: 0;
+    font-size: 54px;
+    letter-spacing: 3px;
+    font-weight: 200;
+    color: #666;
+    background-color: #fff;
+    padding-top: 14px;
 }
 .time {
     /* border: 1px solid blue; */
-    width: 760px;
+    width: 800px;
     height: 200px;
-    /* line-height: 80px; */
     font-size: 160px;
     color: #000;
     font-weight: bolder;
