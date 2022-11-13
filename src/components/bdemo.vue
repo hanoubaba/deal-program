@@ -1,6 +1,13 @@
 <template>
     <div class="all">
-        <div class="container">
+        <div class="before" v-if="flag">
+            <el-input style="width:300px;margin-bottom:20px" v-model="name" placeholder="请输入小区" clearable></el-input>
+            <el-button type="primary" @click="showInfo">点击确认</el-button>
+        </div>
+        <div class="container" v-else>
+            <div class="box">
+                <p class="name">{{name}}</p>
+            </div>
             <div class="box1">
                 <p class="date">{{date}}</p>
             </div>
@@ -16,14 +23,19 @@ export default {
     name: 'HelloWorld',
     data () {
         return {
+            name: "牛寨3号院",
             date: '',
-            time: ''
+            time: '',
+            flag: true
         }
     },
     mounted () {
         this.run()
     },
     methods: {
+        showInfo () {
+            this.flag = false
+        },
         run () {
             var time = new Date();//获取系统当前时间
             var year = time.getFullYear();
@@ -78,6 +90,29 @@ export default {
     /* border: 1px solid red; */
     background: url('../assets/hs.png') no-repeat center/100%;
 }
+.box {
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    top: 112px;
+    width: 100%;
+    /* height: 100px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    width: 80%;
+    /* height: 100px; */
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(23, 173, 38, 0.2);
+}
 .box1 {
     /* border: 1px solid red; */
     position: absolute;
@@ -123,5 +158,14 @@ export default {
     font-weight: bolder;
     background-color: #fff;
     letter-spacing: 5px;
+}
+.before {
+    width: 100%;
+    height: 800px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 </style>
