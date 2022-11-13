@@ -1,6 +1,7 @@
 <template>
     <div class="all">
         <div class="before" v-if="flag">
+            <p v-for="(name,i) in nameLs" :key="'name'+i" class="history" @click="clickHis(name)">{{name}}</p>
             <el-input style="width:300px;margin-bottom:20px" v-model="name" placeholder="请输入小区" clearable></el-input>
             <el-button type="primary" @click="showInfo">点击确认</el-button>
         </div>
@@ -26,13 +27,22 @@ export default {
             name: "牛寨3号院",
             date: '',
             time: '',
-            flag: true
+            flag: true,
+            nameLs: [
+                '牛寨3号院',
+                '万科城小世界',
+                '牛寨3号院',
+            ]
         }
     },
     mounted () {
         this.run()
     },
     methods: {
+        clickHis (name) {
+            this.name = name
+            this.flag = false
+        },
         showInfo () {
             this.flag = false
         },
@@ -94,7 +104,7 @@ export default {
     /* border: 1px solid red; */
     position: absolute;
     left: 0;
-    top: 112px;
+    top: 132px;
     width: 100%;
     /* height: 100px; */
     display: flex;
@@ -167,5 +177,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.history {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
 }
 </style>
