@@ -24,14 +24,13 @@ export default {
     name: 'HelloWorld',
     data () {
         return {
-            name: "牛寨3号院",
+            name: "牛砦3号院",
             date: '',
             time: '',
             flag: true,
             nameLs: [
-                '牛寨3号院',
+                '牛砦3号院',
                 '万科城小世界',
-                '牛寨3号院',
             ]
         }
     },
@@ -121,7 +120,7 @@ export default {
     letter-spacing: 2px;
     font-weight: bold;
     color: #fff;
-    background-color: rgba(23, 173, 38, 0.2);
+    background-color: rgba(23, 173, 38, 0.1);
 }
 .box1 {
     /* border: 1px solid red; */
