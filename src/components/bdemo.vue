@@ -97,7 +97,7 @@ export default {
     max-width: 750px;
     height: 800px;
     /* border: 1px solid red; */
-    background: url('../assets/hs.png') no-repeat center/100%;
+    background: url('../assets/hs1.png') no-repeat center/100%;
 }
 .box {
     /* border: 1px solid red; */
@@ -120,7 +120,7 @@ export default {
     letter-spacing: 2px;
     font-weight: bold;
     color: #fff;
-    background-color: rgba(23, 173, 38, 0.1);
+    /* background-color: rgba(23, 173, 38, 0.1); */
 }
 .box1 {
     /* border: 1px solid red; */
