@@ -24,13 +24,14 @@ export default {
     name: 'HelloWorld',
     data () {
         return {
-            name: "牛砦3号院",
+            name: "",
             date: '',
             time: '',
             flag: true,
             nameLs: [
                 '牛砦3号院',
                 '万科城小世界',
+                '河南福满堂物业服务有限公司高新分公司'
             ]
         }
     },
@@ -43,6 +44,9 @@ export default {
             this.flag = false
         },
         showInfo () {
+            if(!this.name){
+                return
+            }
             this.flag = false
         },
         run () {
@@ -112,11 +116,11 @@ export default {
     align-items: center;
 }
 .name {
-    width: 80%;
+    width: 96%;
     /* height: 100px; */
     padding: 0;
     margin: 0;
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 2px;
     font-weight: bold;
     color: #fff;
@@ -181,5 +185,6 @@ export default {
     text-decoration: underline;
     color: blue;
     cursor: pointer;
+    line-height: 0.1em;
 }
 </style>
