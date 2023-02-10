@@ -30,8 +30,9 @@ export default {
             flag: true,
             nameLs: [
                 '牛砦3号院',
-                '万科城小世界',
-                '河南福满堂物业服务有限公司高新分公司'
+                '河南福满堂物业服务有限公司高新分公司',
+                '万科广场',
+                '向心力信息技术股份有限公司'
             ]
         }
     },
@@ -44,7 +45,7 @@ export default {
             this.flag = false
         },
         showInfo () {
-            if(!this.name){
+            if (!this.name) {
                 return
             }
             this.flag = false
