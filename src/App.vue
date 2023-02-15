@@ -6,7 +6,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import HelloWorld from './components/bdemo.vue'
+import HelloWorld from './components/shujufenxi.vue'
 
 export default {
     name: 'App',
@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+* {
+    padding: 0;
+    margin: 0;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
