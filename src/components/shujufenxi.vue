@@ -52,6 +52,7 @@ export default {
         var myChart = echarts.init(chartDom);
         var option;
         option = {
+            color: ['#05c28c', '#fc0048'],
             title: {
                 // text: 'Referer of a Website',
                 // subtext: 'Fake Data',
